@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculateCgpaActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Credit :"
+            android:id="@+id/txtCurrCredit"
+            android:layout_marginTop="12dp"
+            android:textSize="18sp"
+            />
+        <EditText
+            android:id="@+id/edtCurrentCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/txtCurrCredit"
+            android:layout_marginLeft="20dp"
+            android:textSize="14sp"
+            android:hint="Leave empty if none"
+            />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="60dp"
+        android:id="@+id/layoutRelCurrCgpa"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current CGPA :"
+            android:id="@+id/txtCurrCgpa"
+            android:layout_marginTop="12dp"
+            android:textSize="18sp"
+            />
+        <EditText
+            android:id="@+id/edtCurrentCgpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/txtCurrCgpa"
+            android:layout_marginLeft="20dp"
+            android:textSize="14sp"
+            android:hint="Leave empty if none"/>
+
+
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/taken_courses"
+        android:layout_below="@+id/layoutRelCurrCgpa"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txt"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/layout1"
+        >
+        <EditText
+            android:id="@+id/edtCredit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="9"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:hint="Enter credit per hour"
+            android:textSize="15sp"
+            />
+        <EditText
+            android:id="@+id/edtCgpa1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/edtCredit1"
+            android:layout_marginLeft="20dp"
+            android:hint="Enter your CGPA"
+            android:textSize="15sp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout1"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/layout2"
+        >
+        <EditText
+            android:id="@+id/edtCredit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="9"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:hint="Enter credit per hour"
+            android:textSize="15sp"
+            />
+        <EditText
+            android:id="@+id/edtCgpa2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/edtCredit2"
+            android:layout_marginLeft="20dp"
+            android:hint="Enter your CGPA"
+            android:textSize="15sp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout2"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/layout3"
+        >
+        <EditText
+            android:id="@+id/edtCredit3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="9"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:hint="Enter credit per hour"
+            android:textSize="15sp"
+            />
+        <EditText
+            android:id="@+id/edtCgpa3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/edtCredit3"
+            android:layout_marginLeft="20dp"
+            android:hint="Enter your CGPA"
+            android:textSize="15sp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout3"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/layout4"
+        >
+        <EditText
+            android:id="@+id/edtCredit4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="9"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:hint="Enter credit per hour"
+            android:textSize="15sp"
+            />
+        <EditText
+            android:id="@+id/edtCgpa4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/edtCredit4"
+            android:layout_marginLeft="20dp"
+            android:hint="Enter your CGPA"
+            android:textSize="15sp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout4"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/layout5"
+        >
+        <EditText
+            android:id="@+id/edtCredit5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="9"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:hint="Enter credit per hour"
+            android:textSize="15sp"
+            />
+        <EditText
+            android:id="@+id/edtCgpa5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/edtCredit5"
+            android:layout_marginLeft="20dp"
+            android:hint="Enter your CGPA"
+            android:textSize="15sp"
+            />
+    </RelativeLayout>
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/layout5"
+        android:background="@drawable/button_background"
+        android:text="CALCULATE"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textSize="14sp"
+        android:id="@+id/btnCalculate"/>
+
+
+</RelativeLayout>
