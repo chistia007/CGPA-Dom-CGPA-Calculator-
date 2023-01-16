@@ -4,16 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartActivity"
-    android:layout_centerVertical="true"
-    android:background="@color/ic_launcher_background">
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/icon"
-        android:layout_centerInParent="true"
-        android:visibility="invisible"
-        android:id="@+id/imgIcon"/>
+    tools:context=".BracuStartActivity"
+    >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,15 +18,18 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:src="@drawable/logo"
-            android:id="@+id/imgLogo"/>
+            android:src="@drawable/bracu_logo"
+            android:id="@+id/imgLogo"
+            />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/button_background"
-            android:text="Cgpa calculator"
-            android:id="@+id/btnCgpaCal"/>
+            android:text="Log In"
+            android:textAllCaps="false"
+            android:id="@+id/btnLogin"
+            android:layout_marginTop="40dp"/>
         <Space
             android:layout_width="0dp"
             android:layout_height="10dp"/>
@@ -41,16 +37,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/button_background"
-            android:text="BRACU Student"
-            android:id="@+id/btnBracuStudent"/>
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="10dp"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/button_background"
-            android:text="About Us"
-            android:id="@+id/btnAboutUS"/>
+            android:text="Register"
+            android:textAllCaps="false"
+            android:id="@+id/btnRegister"/>
     </LinearLayout>
+
 </RelativeLayout>

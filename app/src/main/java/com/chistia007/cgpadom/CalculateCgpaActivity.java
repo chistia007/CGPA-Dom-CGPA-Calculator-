@@ -1,9 +1,13 @@
 package com.chistia007.cgpadom;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.chistia007.cgpadom.databinding.ActivityCalculateCgpaBinding;
@@ -17,18 +21,25 @@ public class CalculateCgpaActivity extends AppCompatActivity {
     private String credit3;
     private String credit4;
     private String credit5;
+    private String credit6;
+    private String credit7;
+    private String credit8;
     private String cgpa1;
     private String cgpa2;
     private String cgpa3;
     private String cgpa4;
     private String cgpa5;
+    private String cgpa6;
+    private String cgpa7;
+    private String cgpa8;
+    private String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivityCalculateCgpaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        Toast.makeText(this, "Leave fields empty that are not necessary for you.", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "First semester? leave first two fields empty.", Toast.LENGTH_LONG).show();
 
 
 
@@ -47,12 +58,18 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                 credit3=binding.edtCredit3.getText().toString();
                 credit4=binding.edtCredit4.getText().toString();
                 credit5=binding.edtCredit5.getText().toString();
+                credit6=binding.edtCredit6.getText().toString();
+                credit7=binding.edtCredit7.getText().toString();
+                credit8=binding.edtCredit8.getText().toString();
 
                 cgpa1=binding.edtCgpa1.getText().toString();
                 cgpa2=binding.edtCgpa2.getText().toString();
                 cgpa3=binding.edtCgpa3.getText().toString();
                 cgpa4=binding.edtCgpa4.getText().toString();
                 cgpa5=binding.edtCgpa5.getText().toString();
+                cgpa6=binding.edtCgpa6.getText().toString();
+                cgpa7=binding.edtCgpa7.getText().toString();
+                cgpa8=binding.edtCgpa8.getText().toString();
 
                 currentCreditInt=Float.parseFloat(currentCredit);
                 currentCgpaInt=Float.parseFloat(currentCgpa);
@@ -62,10 +79,12 @@ public class CalculateCgpaActivity extends AppCompatActivity {
 
         });
 
+        dropDownActivity();
+
     }
     private void calculateCgpa() {
         if(credit1.equals("")|| cgpa1.equals("")){
-            Toast.makeText(CalculateCgpaActivity.this, "You can not leave first field of the Taken Courses empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CalculateCgpaActivity.this, "Empty credentials", Toast.LENGTH_SHORT).show();
         }
         else{
             if(credit2.equals("")|| cgpa2.equals("")){
@@ -83,6 +102,21 @@ public class CalculateCgpaActivity extends AppCompatActivity {
             if(credit5.equals("")|| cgpa5.equals("")){
                 credit5 +="0";
                 cgpa5 +="0";
+
+            }
+
+            if(credit6.equals("")|| cgpa6.equals("")){
+                credit6 +="0";
+                cgpa6 +="0";
+            }
+            if(credit7.equals("")|| cgpa7.equals("")){
+                credit7 +="0";
+                cgpa7 +="0";
+            }
+            if(credit8.equals("")|| cgpa8.equals("")){
+                credit8 +="0";
+                cgpa8 +="0";
+
             }
 
             Float finalCredit1 = Float.parseFloat(credit1);
@@ -100,14 +134,158 @@ public class CalculateCgpaActivity extends AppCompatActivity {
             Float finalCredit5 = Float.parseFloat(credit5);
             Float finalCgpa5 = Float.parseFloat(cgpa5);
 
-            float totalCredit = currentCreditInt + finalCredit1 + finalCredit2 + finalCredit3 + finalCredit4 + finalCredit5;
-            float totalCgpa = ((currentCreditInt * currentCgpaInt) + (finalCredit1 * finalCgpa1) + (finalCredit2 * finalCgpa2) + (finalCredit3 * finalCgpa3) + (finalCredit4 * finalCgpa4) + (finalCredit5 * finalCgpa5)) / totalCredit;
+            Float finalCredit6 = Float.parseFloat(credit6);
+            Float finalCgpa6 = Float.parseFloat(cgpa6);
+
+            Float finalCredit7 = Float.parseFloat(credit7);
+            Float finalCgpa7 = Float.parseFloat(cgpa7);
+
+            Float finalCredit8 = Float.parseFloat(credit8);
+            Float finalCgpa8 = Float.parseFloat(cgpa8);
+
+            float totalCredit = currentCreditInt + finalCredit1 + finalCredit2 + finalCredit3 + finalCredit4 + finalCredit5 + finalCredit6 + finalCredit7 + finalCredit8;
+            float totalCgpa = ((currentCreditInt * currentCgpaInt) + (finalCredit1 * finalCgpa1) + (finalCredit2 * finalCgpa2) + (finalCredit3 * finalCgpa3) + (finalCredit4 * finalCgpa4) + (finalCredit5 * finalCgpa5) + (finalCredit6 * finalCgpa6) + (finalCredit7 * finalCgpa7) + (finalCredit8 * finalCgpa8)) / totalCredit;
+            String totalCreditStr = Float.toString(totalCredit);
             String totalCgpaStr = Float.toString(totalCgpa);
-            Toast.makeText(CalculateCgpaActivity.this, totalCgpaStr, Toast.LENGTH_SHORT).show();
+
+            //Dialog box to show cgpa after calculation
+            AlertDialog.Builder builder=new AlertDialog.Builder(CalculateCgpaActivity.this);
+            builder.setTitle(getString(R.string.app_name));
+            builder.setMessage("Your total Credit: "+ totalCreditStr + "\n\n"+
+                    "Your CGPA: " + totalCgpaStr);
+            builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+
+            builder.setPositiveButton("Rate us", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+//                    Intent intent= new Intent(CalculateCgpaActivity.this, WebsiteActivity.class);
+//                    startActivity(intent);
+                }
+            });
+            builder.create().show();
+
         }
+
+
 
     }
 
+    private void dropDownActivity() {
+        String[] items=new String[]{
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+
+        };
+
+        ArrayAdapter<String> adapter= new ArrayAdapter<>(
+                CalculateCgpaActivity.this,
+                R.layout.drop_down_item,
+                items
+        );
+
+        binding.dropDownText.setAdapter(adapter);
+
+        binding.btnProcess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text=binding.dropDownText.getText().toString();
+                binding.layoutCalculate.setVisibility(View.VISIBLE);
+
+                if(text.equals("1")){
+                    binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss2.setVisibility(View.GONE);
+                    binding.linearLayDiss3.setVisibility(View.GONE);
+                    binding.linearLayDiss4.setVisibility(View.GONE);
+                    binding.linearLayDiss5.setVisibility(View.GONE);
+                    binding.linearLayDiss6.setVisibility(View.GONE);
+                    binding.linearLayDiss7.setVisibility(View.GONE);
+                    binding.linearLayDiss8.setVisibility(View.GONE);
+                }
+                else if(text.equals("2")){
+                    binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss3.setVisibility(View.GONE);
+                    binding.linearLayDiss4.setVisibility(View.GONE);
+                    binding.linearLayDiss5.setVisibility(View.GONE);
+                    binding.linearLayDiss6.setVisibility(View.GONE);
+                    binding.linearLayDiss7.setVisibility(View.GONE);
+                    binding.linearLayDiss8.setVisibility(View.GONE);
+                }
+                else if(text.equals("3")){
+                    binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss3.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss4.setVisibility(View.GONE);
+                    binding.linearLayDiss5.setVisibility(View.GONE);
+                    binding.linearLayDiss6.setVisibility(View.GONE);
+                    binding.linearLayDiss7.setVisibility(View.GONE);
+                    binding.linearLayDiss8.setVisibility(View.GONE);
+                }
+                else if(text.equals("4")){
+                    binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss3.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss4.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss5.setVisibility(View.GONE);
+                    binding.linearLayDiss6.setVisibility(View.GONE);
+                    binding.linearLayDiss7.setVisibility(View.GONE);
+                    binding.linearLayDiss8.setVisibility(View.GONE);
+                }
+                else if(text.equals("5")){
+                    binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss3.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss4.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss5.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss6.setVisibility(View.GONE);
+                    binding.linearLayDiss7.setVisibility(View.GONE);
+                    binding.linearLayDiss8.setVisibility(View.GONE);
+                }
+                else if(text.equals("6")){
+                    binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss3.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss4.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss5.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss6.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss7.setVisibility(View.GONE);
+                    binding.linearLayDiss8.setVisibility(View.GONE);
+                }
+                else if(text.equals("7")){
+                    binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss3.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss4.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss5.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss6.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss7.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss8.setVisibility(View.GONE);
+                }
+                else if (text.equals("8")){
+                    binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss3.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss4.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss5.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss6.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss7.setVisibility(View.VISIBLE);
+                    binding.linearLayDiss8.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+    }
 
 
 }

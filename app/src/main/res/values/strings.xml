@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">CGPA Dom</string>
     <string name="taken_courses"><u>Taken Courses</u></string>
+
+    <string name="open"> </string>
+    <string name="close"> </string>
 </resources>
