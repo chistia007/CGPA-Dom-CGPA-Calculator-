@@ -45,6 +45,8 @@
         android:hint="Password"
         android:padding="10dp"
         android:id="@+id/edtPassword"
+        android:inputType="textPassword"
+
         />
     <Button
         android:layout_width="match_parent"

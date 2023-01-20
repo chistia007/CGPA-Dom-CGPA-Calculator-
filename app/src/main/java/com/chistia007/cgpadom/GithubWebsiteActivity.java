@@ -5,17 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebViewClient;
 
-import com.chistia007.cgpadom.databinding.ActivityWebsiteBinding;
+import com.chistia007.cgpadom.databinding.ActivityGithubWebsiteBinding;
 
-public class WebsiteActivity extends AppCompatActivity {
-    ActivityWebsiteBinding binding;
+public class GithubWebsiteActivity extends AppCompatActivity {
+    ActivityGithubWebsiteBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding= ActivityWebsiteBinding.inflate(getLayoutInflater());
+        binding=ActivityGithubWebsiteBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.webView.loadUrl("https://chistia007.github.io/");
+        binding.webView.loadUrl("https://github.com/chistia007");
         binding.webView.setWebViewClient(new WebViewClient());
     }
 }

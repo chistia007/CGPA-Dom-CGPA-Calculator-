@@ -19,17 +19,18 @@
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                app:cardBackgroundColor="#29BFEA"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="39dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@drawable/cgpadom_floating_bg">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         >
 
                         <TextView
@@ -44,6 +45,7 @@
                             android:textColor="#fff"
                             android:paddingLeft="30dp"
                             android:textSize="18dp"
+                            android:fontFamily="@font/abeezee"
                             />
                         <TextView
                             android:id="@+id/txtName"
@@ -57,6 +59,7 @@
                             android:textColor="#fff"
                             android:paddingLeft="8dp"
                             android:textSize="18dp"
+                            android:fontFamily="@font/abeezee"
                             />
 
                     </LinearLayout>
@@ -79,6 +82,7 @@
                             android:textColor="#fff"
                             android:paddingLeft="30dp"
                             android:textSize="18dp"
+                            android:fontFamily="@font/abeezee"
                             />
                         <TextView
                             android:id="@+id/txtCredit"
@@ -92,6 +96,7 @@
                             android:textColor="#fff"
                             android:paddingLeft="8dp"
                             android:textSize="18dp"
+                            android:fontFamily="@font/abeezee"
                             />
 
                     </LinearLayout>
@@ -100,6 +105,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
                         >
 
                         <TextView
@@ -114,6 +120,7 @@
                             android:textColor="#fff"
                             android:paddingLeft="30dp"
                             android:textSize="18dp"
+                            android:fontFamily="@font/abeezee"
                             />
                         <TextView
                             android:id="@+id/txtCgpa"
@@ -127,6 +134,7 @@
                             android:textColor="#fff"
                             android:paddingLeft="8dp"
                             android:textSize="18dp"
+                            android:fontFamily="@font/abeezee"
                             />
 
                     </LinearLayout>
@@ -258,7 +266,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/cardView"
                 tools:ignore="MissingConstraints"
                 android:id="@+id/linearLayDiss1"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:gravity="center_horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="189dp"
@@ -319,7 +328,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/cardView"
                 tools:ignore="MissingConstraints"
                 android:id="@+id/linearLayDiss2"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:gravity="center_horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="189dp"
@@ -379,7 +389,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/cardView"
                 tools:ignore="MissingConstraints"
                 android:id="@+id/linearLayDiss3"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:gravity="center_horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="189dp"
@@ -439,7 +450,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/cardView"
                 tools:ignore="MissingConstraints"
                 android:id="@+id/linearLayDiss4"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:gravity="center_horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="189dp"
@@ -499,7 +511,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/cardView"
                 tools:ignore="MissingConstraints"
                 android:id="@+id/linearLayDiss5"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:gravity="center_horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="189dp"
@@ -561,6 +574,7 @@
                 android:layout_marginTop="10dp"
                 android:visibility="gone"
                 android:id="@+id/btnCalculateVisibilty"
+
                 >
                 <Button
                     android:layout_width="wrap_content"

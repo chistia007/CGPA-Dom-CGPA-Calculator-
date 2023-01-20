@@ -185,47 +185,62 @@ public class RepeatCalculation extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 text=binding.dropDownText.getText().toString();
-                if (currentCredit.equals("0")){
-                    Toast.makeText(RepeatCalculation.this, "Update Dashboard manually with CGPA and Credit first", Toast.LENGTH_LONG).show();
+                String editCreditPErHour=binding.edtCreditPerHour.getText().toString();
+                if (editCreditPErHour.equals("")){
+                    Toast.makeText(RepeatCalculation.this, "Please Enter your credit per hour", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    binding.btnCalculateVisibilty.setVisibility(View.VISIBLE);
+                    if (currentCredit.equals("0")){
+                        Toast.makeText(RepeatCalculation.this, "Update Dashboard manually with CGPA and Credit first", Toast.LENGTH_LONG).show();
+                    }
+                    else{
 
-                    if(text.equals("1")){
-                        binding.linearLayDiss1.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss2.setVisibility(View.GONE);
-                        binding.linearLayDiss3.setVisibility(View.GONE);
-                        binding.linearLayDiss4.setVisibility(View.GONE);
-                        binding.linearLayDiss5.setVisibility(View.GONE);
-                    }
-                    else if(text.equals("2")){
-                        binding.linearLayDiss1.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss2.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss3.setVisibility(View.GONE);
-                        binding.linearLayDiss4.setVisibility(View.GONE);
-                        binding.linearLayDiss5.setVisibility(View.GONE);
-                    }
-                    else if(text.equals("3")){
-                        binding.linearLayDiss1.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss2.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss3.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss4.setVisibility(View.GONE);
-                        binding.linearLayDiss5.setVisibility(View.GONE);
-                    }
-                    else if(text.equals("4")){
-                        binding.linearLayDiss1.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss2.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss3.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss4.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss5.setVisibility(View.GONE);
-                    }
-                    else if(text.equals("5")){
-                        binding.linearLayDiss1.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss2.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss3.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss4.setVisibility(View.VISIBLE);
-                        binding.linearLayDiss5.setVisibility(View.VISIBLE);
-                    }
+                        if(text.equals("1")){
+                            binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss2.setVisibility(View.GONE);
+                            binding.linearLayDiss3.setVisibility(View.GONE);
+                            binding.linearLayDiss4.setVisibility(View.GONE);
+                            binding.linearLayDiss5.setVisibility(View.GONE);
+                            binding.btnCalculateVisibilty.setVisibility(View.VISIBLE);
+                        }
+                        else if(text.equals("2")){
+                            binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss3.setVisibility(View.GONE);
+                            binding.linearLayDiss4.setVisibility(View.GONE);
+                            binding.linearLayDiss5.setVisibility(View.GONE);
+                            binding.btnCalculateVisibilty.setVisibility(View.VISIBLE);
+                        }
+                        else if(text.equals("3")){
+                            binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss3.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss4.setVisibility(View.GONE);
+                            binding.linearLayDiss5.setVisibility(View.GONE);
+                            binding.btnCalculateVisibilty.setVisibility(View.VISIBLE);
+                        }
+                        else if(text.equals("4")){
+                            binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss3.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss4.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss5.setVisibility(View.GONE);
+                            binding.btnCalculateVisibilty.setVisibility(View.VISIBLE);
+                        }
+                        else if(text.equals("5")){
+                            binding.linearLayDiss1.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss2.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss3.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss4.setVisibility(View.VISIBLE);
+                            binding.linearLayDiss5.setVisibility(View.VISIBLE);
+                            binding.btnCalculateVisibilty.setVisibility(View.VISIBLE);
+                        }
+                        else{
+                            Toast.makeText(RepeatCalculation.this, "Not a valid number", Toast.LENGTH_SHORT).show();
+                        }
+
+                }
+
 
                 }
 

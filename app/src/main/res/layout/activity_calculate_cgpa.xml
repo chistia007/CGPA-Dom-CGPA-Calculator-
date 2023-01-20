@@ -134,7 +134,8 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:ignore="MissingConstraints"
             android:id="@+id/linearLayDiss1"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:gravity="center_horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="189dp"
@@ -195,7 +196,8 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:ignore="MissingConstraints"
             android:id="@+id/linearLayDiss2"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:gravity="center_horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="189dp"
@@ -255,7 +257,8 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:ignore="MissingConstraints"
             android:id="@+id/linearLayDiss3"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:gravity="center_horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="189dp"
@@ -315,7 +318,8 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:ignore="MissingConstraints"
             android:id="@+id/linearLayDiss4"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:gravity="center_horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="189dp"
@@ -375,7 +379,8 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:ignore="MissingConstraints"
             android:id="@+id/linearLayDiss5"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:gravity="center_horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="189dp"
@@ -436,7 +441,8 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:ignore="MissingConstraints"
             android:id="@+id/linearLayDiss6"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:gravity="center_horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="189dp"
@@ -496,7 +502,8 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:ignore="MissingConstraints"
             android:id="@+id/linearLayDiss7"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:gravity="center_horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="189dp"
@@ -556,7 +563,8 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:ignore="MissingConstraints"
             android:id="@+id/linearLayDiss8"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:gravity="center_horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="189dp"

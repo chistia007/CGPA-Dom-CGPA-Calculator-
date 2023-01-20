@@ -5,17 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebViewClient;
 
-import com.chistia007.cgpadom.databinding.ActivityWebsiteBinding;
+import com.chistia007.cgpadom.databinding.ActivityTwitterWebsiteBinding;
 
-public class WebsiteActivity extends AppCompatActivity {
-    ActivityWebsiteBinding binding;
+public class TwitterWebsiteActivity extends AppCompatActivity {
+    ActivityTwitterWebsiteBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding= ActivityWebsiteBinding.inflate(getLayoutInflater());
+        binding=ActivityTwitterWebsiteBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.webView.loadUrl("https://chistia007.github.io/");
+        binding.webView.loadUrl("https://twitter.com/chisthia_khan");
         binding.webView.setWebViewClient(new WebViewClient());
     }
 }

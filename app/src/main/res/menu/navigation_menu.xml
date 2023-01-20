@@ -12,19 +12,17 @@
                     android:icon="@drawable/ic_menu"
                     android:title="Dashboard" />
                 <item
-                    android:id="@+id/updateDashboard"
+                    android:id="@+id/HowToUse"
                     android:icon="@drawable/ic_menu"
-                    android:title="Update Dashboard Manually" />
-
+                    android:title="How to Use" />
                 <item
                     android:id="@+id/RepeatCalculator"
                     android:icon="@drawable/ic_menu"
                     android:title="Repeat Calculator" />
-
                 <item
-                    android:id="@+id/HowToUse"
+                    android:id="@+id/updateDashboard"
                     android:icon="@drawable/ic_menu"
-                    android:title="How to Use" />
+                    android:title="Update Dashboard Manually" />
 
                 <item
                     android:id="@+id/learnAppDev"

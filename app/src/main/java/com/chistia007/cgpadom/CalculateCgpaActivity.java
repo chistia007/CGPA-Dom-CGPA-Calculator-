@@ -200,7 +200,6 @@ public class CalculateCgpaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 text=binding.dropDownText.getText().toString();
-                binding.layoutCalculate.setVisibility(View.VISIBLE);
 
                 if(text.equals("1")){
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
@@ -211,6 +210,7 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss6.setVisibility(View.GONE);
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
+                    binding.layoutCalculate.setVisibility(View.VISIBLE);
                 }
                 else if(text.equals("2")){
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
@@ -221,6 +221,7 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss6.setVisibility(View.GONE);
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
+                    binding.layoutCalculate.setVisibility(View.VISIBLE);
                 }
                 else if(text.equals("3")){
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
@@ -231,6 +232,7 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss6.setVisibility(View.GONE);
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
+                    binding.layoutCalculate.setVisibility(View.VISIBLE);
                 }
                 else if(text.equals("4")){
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
@@ -241,6 +243,7 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss6.setVisibility(View.GONE);
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
+                    binding.layoutCalculate.setVisibility(View.VISIBLE);
                 }
                 else if(text.equals("5")){
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
@@ -251,6 +254,7 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss6.setVisibility(View.GONE);
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
+                    binding.layoutCalculate.setVisibility(View.VISIBLE);
                 }
                 else if(text.equals("6")){
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
@@ -261,6 +265,7 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss6.setVisibility(View.VISIBLE);
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
+                    binding.layoutCalculate.setVisibility(View.VISIBLE);
                 }
                 else if(text.equals("7")){
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
@@ -271,6 +276,7 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss6.setVisibility(View.VISIBLE);
                     binding.linearLayDiss7.setVisibility(View.VISIBLE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
+                    binding.layoutCalculate.setVisibility(View.VISIBLE);
                 }
                 else if (text.equals("8")){
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
@@ -281,6 +287,10 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss6.setVisibility(View.VISIBLE);
                     binding.linearLayDiss7.setVisibility(View.VISIBLE);
                     binding.linearLayDiss8.setVisibility(View.VISIBLE);
+                    binding.layoutCalculate.setVisibility(View.VISIBLE);
+                }
+                else{
+                    Toast.makeText(CalculateCgpaActivity.this, "Not a valid number", Toast.LENGTH_SHORT).show();
                 }
             }
         });
