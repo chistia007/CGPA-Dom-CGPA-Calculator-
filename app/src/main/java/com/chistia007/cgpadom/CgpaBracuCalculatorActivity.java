@@ -197,7 +197,7 @@ public class CgpaBracuCalculatorActivity extends AppCompatActivity {
 
 
                 if(credit1.equals("")|| cgpa1.equals("")){
-                    Toast.makeText(CgpaBracuCalculatorActivity.this, "Empty credentials", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CgpaBracuCalculatorActivity.this, "Empty fields detected", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     if(credit2.equals("")|| cgpa2.equals("")){

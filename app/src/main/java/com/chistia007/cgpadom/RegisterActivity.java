@@ -28,6 +28,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RegisterActivity extends AppCompatActivity {
     ActivityRegisterBinding binding;
     private FirebaseAuth mAuth;
@@ -49,15 +52,29 @@ public class RegisterActivity extends AppCompatActivity {
                 String txtName=binding.edtName.getText().toString();
                 String txtEmail=binding.edtEmail.getText().toString();
                 String txtPassword=binding.edtPassword.getText().toString();
-                if(TextUtils.isEmpty(txtName)|| TextUtils.isEmpty(txtEmail)|| TextUtils.isEmpty(txtPassword)){
-                    Toast.makeText(RegisterActivity.this, "Empty credentials", Toast.LENGTH_SHORT).show();
-                }
-                else if(txtPassword.length()<6){
-                    Toast.makeText(RegisterActivity.this, "Password too short", Toast.LENGTH_SHORT).show();
+
+                //regEx for Bracu email
+                Pattern pattern = Pattern.compile("bracu", Pattern.CASE_INSENSITIVE);
+                Matcher matcher = pattern.matcher(txtEmail);
+                boolean matchFound = matcher.find();
+                if(txtName.equals("") || txtEmail.equals("") || txtPassword.equals("")) {
+                    Toast.makeText(RegisterActivity.this, "Empty Credentials", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    registerUser(txtName,txtEmail,txtPassword);
+                    if(!matchFound) {
+                        Toast.makeText(RegisterActivity.this, "Use BRAC University Email", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(TextUtils.isEmpty(txtName)|| TextUtils.isEmpty(txtEmail)|| TextUtils.isEmpty(txtPassword)){
+                        Toast.makeText(RegisterActivity.this, "Empty Credentials", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(txtPassword.length()<6){
+                        Toast.makeText(RegisterActivity.this, "Password too short", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        registerUser(txtName,txtEmail,txtPassword);
+                    }
                 }
+
             }
 
             private void registerUser(String name, String email, String password) {
@@ -80,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
                         col.document(Objects.requireNonNull(mAuth.getCurrentUser()).getUid()).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(RegisterActivity.this, "document successfully stored", Toast.LENGTH_SHORT).show();
+
                             }
                         })
                                 .addOnFailureListener(new OnFailureListener() {
