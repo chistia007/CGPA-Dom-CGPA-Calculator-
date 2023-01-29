@@ -3,6 +3,7 @@ package com.chistia007.cgpadom;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -153,7 +154,7 @@ public class CalculateCgpaActivity extends AppCompatActivity {
             });
 
             builder.setPositiveButton("Rate us", (dialog, which) -> {
-                //TODO
+                startActivity(new Intent(CalculateCgpaActivity.this,ShareWebsite.class));
             });
             builder.create().show();
 

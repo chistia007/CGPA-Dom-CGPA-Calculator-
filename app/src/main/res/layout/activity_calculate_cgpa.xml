@@ -9,7 +9,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,7 +22,7 @@
             android:visibility="visible">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="260dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
@@ -56,7 +58,7 @@
             android:visibility="visible">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="260dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
 
@@ -140,11 +142,10 @@
             >
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="189dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="Enter Credit"
-                android:paddingLeft="20dp"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomStart="20dp"
@@ -154,6 +155,9 @@
                 app:counterMaxLength="1"
                 app:endIconMode="clear_text"
                 app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingRight="10dp"
+                android:paddingBottom="7dp"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -167,9 +171,8 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:hint="Enter your CGPA"
                 app:boxBackgroundColor="#FFFFFF"
@@ -180,7 +183,10 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="3"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:paddingBottom="7dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCgpa1"
@@ -203,10 +209,9 @@
             android:gravity="center">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="189dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Enter Credit"
-                android:paddingLeft="20dp"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomStart="20dp"
@@ -215,7 +220,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="1"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingRight="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCredit2"
@@ -228,9 +235,9 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+
                 android:hint="Enter your CGPA"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -240,7 +247,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="3"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCgpa2"
@@ -264,10 +273,9 @@
             android:gravity="center">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="189dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Enter Credit"
-                android:paddingLeft="20dp"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomStart="20dp"
@@ -276,7 +284,10 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="1"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingRight="10dp"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCredit3"
@@ -289,9 +300,8 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:hint="Enter your CGPA"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -301,7 +311,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="3"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCgpa3"
@@ -325,10 +337,9 @@
             android:gravity="center">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="189dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Enter Credit"
-                android:paddingLeft="20dp"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomStart="20dp"
@@ -337,7 +348,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="1"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingRight="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCredit4"
@@ -350,9 +363,9 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+
                 android:hint="Enter your CGPA"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -362,7 +375,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="3"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCgpa4"
@@ -386,10 +401,9 @@
             android:gravity="center">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="189dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Enter Credit"
-                android:paddingLeft="20dp"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomStart="20dp"
@@ -398,7 +412,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="1"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingRight="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCredit5"
@@ -411,9 +427,8 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:hint="Enter your CGPA"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -423,7 +438,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="3"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCgpa5"
@@ -448,10 +465,9 @@
             android:gravity="center">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="189dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Enter Credit"
-                android:paddingLeft="20dp"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomStart="20dp"
@@ -460,7 +476,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="1"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingRight="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCredit6"
@@ -473,9 +491,8 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:hint="Enter your CGPA"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -485,7 +502,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="3"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCgpa6"
@@ -509,10 +528,9 @@
             android:gravity="center">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="189dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Enter Credit"
-                android:paddingLeft="20dp"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomStart="20dp"
@@ -521,7 +539,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="1"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingRight="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCredit7"
@@ -534,9 +554,8 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:hint="Enter your CGPA"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -546,7 +565,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="3"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCgpa7"
@@ -570,10 +591,9 @@
             android:gravity="center">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="189dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Enter Credit"
-                android:paddingLeft="20dp"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomStart="20dp"
@@ -582,7 +602,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="1"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingRight="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCredit8"
@@ -595,9 +617,8 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:hint="Enter your CGPA"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -607,7 +628,9 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="3"
                 app:endIconMode="clear_text"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCgpa8"

@@ -85,7 +85,7 @@ public class CgpaBracuCalculatorActivity extends AppCompatActivity {
                     startActivity(new Intent(CgpaBracuCalculatorActivity.this,LearnAppDev.class));
                     break;
                 case R.id.shareApp:
-                    Toast.makeText(CgpaBracuCalculatorActivity.this, "Share App", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(CgpaBracuCalculatorActivity.this,ShareWebsite.class));
                     break;
 
                 case R.id.logOut:
