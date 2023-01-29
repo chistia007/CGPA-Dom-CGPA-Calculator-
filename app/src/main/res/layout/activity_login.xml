@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="12dp"
-    android:background="@color/ic_launcher_background">
+    android:background="#FAFAFA">
 
     <ImageView
         android:layout_width="wrap_content"

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebViewClient;
 
-import com.chistia007.cgpadom.databinding.ActivityGithubWebsiteBinding;
 import com.chistia007.cgpadom.databinding.ActivityLinkdinWebsiteBinding;
 
 public class LinkdinWebsiteActivity extends AppCompatActivity {

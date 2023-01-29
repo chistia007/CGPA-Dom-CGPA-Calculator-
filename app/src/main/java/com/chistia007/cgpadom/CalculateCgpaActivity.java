@@ -3,14 +3,14 @@ package com.chistia007.cgpadom;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.chistia007.cgpadom.databinding.ActivityCalculateCgpaBinding;
+
+import java.util.Objects;
 
 public class CalculateCgpaActivity extends AppCompatActivity {
     ActivityCalculateCgpaBinding binding;
@@ -43,40 +43,35 @@ public class CalculateCgpaActivity extends AppCompatActivity {
 
 
 
-        binding.btnCalculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String currentCredit=binding.edtCurrentCredit.getText().toString();
-                String currentCgpa=binding.edtCurrentCgpa.getText().toString();
-                if(currentCredit.equals("")|| currentCgpa.equals("")){
-                    currentCredit+="0";
-                    currentCgpa+="0";
-                }
-
-                credit1=binding.edtCredit1.getText().toString();
-                credit2=binding.edtCredit2.getText().toString();
-                credit3=binding.edtCredit3.getText().toString();
-                credit4=binding.edtCredit4.getText().toString();
-                credit5=binding.edtCredit5.getText().toString();
-                credit6=binding.edtCredit6.getText().toString();
-                credit7=binding.edtCredit7.getText().toString();
-                credit8=binding.edtCredit8.getText().toString();
-
-                cgpa1=binding.edtCgpa1.getText().toString();
-                cgpa2=binding.edtCgpa2.getText().toString();
-                cgpa3=binding.edtCgpa3.getText().toString();
-                cgpa4=binding.edtCgpa4.getText().toString();
-                cgpa5=binding.edtCgpa5.getText().toString();
-                cgpa6=binding.edtCgpa6.getText().toString();
-                cgpa7=binding.edtCgpa7.getText().toString();
-                cgpa8=binding.edtCgpa8.getText().toString();
-
-                currentCreditInt=Float.parseFloat(currentCredit);
-                currentCgpaInt=Float.parseFloat(currentCgpa);
-                calculateCgpa();
+        binding.btnCalculate.setOnClickListener(view -> {
+            String currentCredit= Objects.requireNonNull(binding.edtCurrentCredit.getText()).toString();
+            String currentCgpa= Objects.requireNonNull(binding.edtCurrentCgpa.getText()).toString();
+            if(currentCredit.equals("")|| currentCgpa.equals("")){
+                currentCredit+="0";
+                currentCgpa+="0";
             }
 
+            credit1= Objects.requireNonNull(binding.edtCredit1.getText()).toString();
+            credit2= Objects.requireNonNull(binding.edtCredit2.getText()).toString();
+            credit3= Objects.requireNonNull(binding.edtCredit3.getText()).toString();
+            credit4= Objects.requireNonNull(binding.edtCredit4.getText()).toString();
+            credit5= Objects.requireNonNull(binding.edtCredit5.getText()).toString();
+            credit6= Objects.requireNonNull(binding.edtCredit6.getText()).toString();
+            credit7= Objects.requireNonNull(binding.edtCredit7.getText()).toString();
+            credit8= Objects.requireNonNull(binding.edtCredit8.getText()).toString();
 
+            cgpa1= Objects.requireNonNull(binding.edtCgpa1.getText()).toString();
+            cgpa2= Objects.requireNonNull(binding.edtCgpa2.getText()).toString();
+            cgpa3= Objects.requireNonNull(binding.edtCgpa3.getText()).toString();
+            cgpa4= Objects.requireNonNull(binding.edtCgpa4.getText()).toString();
+            cgpa5= Objects.requireNonNull(binding.edtCgpa5.getText()).toString();
+            cgpa6= Objects.requireNonNull(binding.edtCgpa6.getText()).toString();
+            cgpa7= Objects.requireNonNull(binding.edtCgpa7.getText()).toString();
+            cgpa8= Objects.requireNonNull(binding.edtCgpa8.getText()).toString();
+
+            currentCreditInt=Float.parseFloat(currentCredit);
+            currentCgpaInt=Float.parseFloat(currentCgpa);
+            calculateCgpa();
         });
 
         dropDownActivity();
@@ -84,7 +79,7 @@ public class CalculateCgpaActivity extends AppCompatActivity {
     }
     private void calculateCgpa() {
         if(credit1.equals("")|| cgpa1.equals("")){
-            Toast.makeText(CalculateCgpaActivity.this, "Empty credentials", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CalculateCgpaActivity.this, "Empty fields detected", Toast.LENGTH_SHORT).show();
         }
         else{
             if(credit2.equals("")|| cgpa2.equals("")){
@@ -153,19 +148,12 @@ public class CalculateCgpaActivity extends AppCompatActivity {
             builder.setTitle(getString(R.string.app_name));
             builder.setMessage("Your total Credit: "+ totalCreditStr + "\n\n"+
                     "Your CGPA: " + totalCgpaStr);
-            builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+            builder.setNegativeButton("Dismiss", (dialog, which) -> {
 
-                }
             });
 
-            builder.setPositiveButton("Rate us", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-//                    Intent intent= new Intent(CalculateCgpaActivity.this, WebsiteActivity.class);
-//                    startActivity(intent);
-                }
+            builder.setPositiveButton("Rate us", (dialog, which) -> {
+                //TODO
             });
             builder.create().show();
 
@@ -196,12 +184,11 @@ public class CalculateCgpaActivity extends AppCompatActivity {
 
         binding.dropDownText.setAdapter(adapter);
 
-        binding.btnProcess.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                text=binding.dropDownText.getText().toString();
+        binding.btnProcess.setOnClickListener(view -> {
+            text=binding.dropDownText.getText().toString();
 
-                if(text.equals("1")){
+            switch (text) {
+                case "1":
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
                     binding.linearLayDiss2.setVisibility(View.GONE);
                     binding.linearLayDiss3.setVisibility(View.GONE);
@@ -211,8 +198,8 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
                     binding.layoutCalculate.setVisibility(View.VISIBLE);
-                }
-                else if(text.equals("2")){
+                    break;
+                case "2":
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
                     binding.linearLayDiss2.setVisibility(View.VISIBLE);
                     binding.linearLayDiss3.setVisibility(View.GONE);
@@ -222,8 +209,8 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
                     binding.layoutCalculate.setVisibility(View.VISIBLE);
-                }
-                else if(text.equals("3")){
+                    break;
+                case "3":
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
                     binding.linearLayDiss2.setVisibility(View.VISIBLE);
                     binding.linearLayDiss3.setVisibility(View.VISIBLE);
@@ -233,8 +220,8 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
                     binding.layoutCalculate.setVisibility(View.VISIBLE);
-                }
-                else if(text.equals("4")){
+                    break;
+                case "4":
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
                     binding.linearLayDiss2.setVisibility(View.VISIBLE);
                     binding.linearLayDiss3.setVisibility(View.VISIBLE);
@@ -244,8 +231,8 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
                     binding.layoutCalculate.setVisibility(View.VISIBLE);
-                }
-                else if(text.equals("5")){
+                    break;
+                case "5":
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
                     binding.linearLayDiss2.setVisibility(View.VISIBLE);
                     binding.linearLayDiss3.setVisibility(View.VISIBLE);
@@ -255,8 +242,8 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
                     binding.layoutCalculate.setVisibility(View.VISIBLE);
-                }
-                else if(text.equals("6")){
+                    break;
+                case "6":
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
                     binding.linearLayDiss2.setVisibility(View.VISIBLE);
                     binding.linearLayDiss3.setVisibility(View.VISIBLE);
@@ -266,8 +253,8 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss7.setVisibility(View.GONE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
                     binding.layoutCalculate.setVisibility(View.VISIBLE);
-                }
-                else if(text.equals("7")){
+                    break;
+                case "7":
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
                     binding.linearLayDiss2.setVisibility(View.VISIBLE);
                     binding.linearLayDiss3.setVisibility(View.VISIBLE);
@@ -277,8 +264,8 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss7.setVisibility(View.VISIBLE);
                     binding.linearLayDiss8.setVisibility(View.GONE);
                     binding.layoutCalculate.setVisibility(View.VISIBLE);
-                }
-                else if (text.equals("8")){
+                    break;
+                case "8":
                     binding.linearLayDiss1.setVisibility(View.VISIBLE);
                     binding.linearLayDiss2.setVisibility(View.VISIBLE);
                     binding.linearLayDiss3.setVisibility(View.VISIBLE);
@@ -288,10 +275,10 @@ public class CalculateCgpaActivity extends AppCompatActivity {
                     binding.linearLayDiss7.setVisibility(View.VISIBLE);
                     binding.linearLayDiss8.setVisibility(View.VISIBLE);
                     binding.layoutCalculate.setVisibility(View.VISIBLE);
-                }
-                else{
+                    break;
+                default:
                     Toast.makeText(CalculateCgpaActivity.this, "Not a valid number", Toast.LENGTH_SHORT).show();
-                }
+                    break;
             }
         });
 
