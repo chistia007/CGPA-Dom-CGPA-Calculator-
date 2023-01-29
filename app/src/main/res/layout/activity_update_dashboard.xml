@@ -35,10 +35,9 @@
         android:gravity="center_horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="189dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Enter Total Credit"
-            android:paddingLeft="20dp"
             app:boxBackgroundColor="#FFFFFF"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusBottomStart="20dp"
@@ -46,7 +45,9 @@
             app:boxStrokeColor="#29BFEA"
             app:counterEnabled="true"
             app:counterMaxLength="3"
-            app:endIconMode="clear_text">
+            app:endIconMode="clear_text"
+            android:layout_weight="1"
+            android:paddingRight="15dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtCurrentCredit"
@@ -59,9 +60,8 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="160dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:hint="Enter your CGPA"
             app:boxBackgroundColor="#FFFFFF"
             app:boxBackgroundMode="outline"
@@ -70,7 +70,9 @@
             app:boxStrokeColor="#29BFEA"
             app:counterEnabled="true"
             app:counterMaxLength="5"
-            app:endIconMode="clear_text">
+            app:endIconMode="clear_text"
+            android:layout_weight="1"
+            android:paddingLeft="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtCurrentCgpa"

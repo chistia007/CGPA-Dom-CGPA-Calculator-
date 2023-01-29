@@ -15,6 +15,9 @@
         android:theme="@style/Theme.CGPADom"
         tools:targetApi="31">
         <activity
+            android:name=".ShareWebsite"
+            android:exported="false" />
+        <activity
             android:name=".GithubWebsiteActivity"
             android:exported="false" />
         <activity

@@ -87,7 +87,7 @@ public class RepeatCalculation extends AppCompatActivity {
 
 
                 if(prevCgpa1.equals("")|| ExpectedCgpa1.equals("")){
-                    Toast.makeText(RepeatCalculation.this, "Empty credentials", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RepeatCalculation.this, "Empty fields detected", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     if(prevCgpa2.equals("")|| ExpectedCgpa2.equals("")){
